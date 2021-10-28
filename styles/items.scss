@@ -1,0 +1,9 @@
+.items-section {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 90vw; //adjusts at 90% screen width
+    margin: 10px;
+  }
+}

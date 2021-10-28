@@ -1,0 +1,32 @@
+@mixin flexCenter($justify) {
+  //the "$justify" is a variable that allows us to change the style as desired
+  display: flex;
+  justify-content: $justify; //align vertically, used often. eg. justify-content: center/space-between etc
+  align-items: center; //aligns horozontally, used often
+}
+.nav-header {
+  height: 10vh; // What ever is in the container, make it 10% of the window height
+  background-color: $primary-color;
+
+  //justify-content: space-between; doesn't apply
+
+  nav {
+    @include flexCenter(
+      space-between
+    ); //passing the value "space-between" into the variable from the mixin
+    height: 100%;
+    background-color: red;
+  }
+}
+
+.landing {
+  @include flexCenter(center);
+  width: 100%;
+  height: 90vh;
+  flex-direction: column; //direction's default is row
+
+  h1 {
+    //nesting (nested inside the landing div)
+    color: $primary-color;
+  }
+}
