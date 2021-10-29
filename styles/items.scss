@@ -1,9 +1,35 @@
+//default to mobile view
 .items-section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
 
   img {
-    width: 90vw; //adjusts at 90% screen width
-    margin: 10px;
+    width: 80vw; //need to include width & height if the images are portrait/landscape
+    height: 80vw;
+    margin: 20px;
+  }
+}
+//desktop view
+@media screen and (min-width: 600px) {
+  .items-section {
+    flex-direction: row;
+
+    img {
+      width: 300px; //need to include width & height if the images are portrait/landscape
+      height: 300px;
+      //margin: 20px; don't need to copy margin as it will automatically take on the margin
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .items-section {
+    img {
+      width: 80vw; //need to include width & height if the images are portrait/landscape
+      height: 80vw;
+    }
   }
 }
